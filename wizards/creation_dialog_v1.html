@@ -21,27 +21,26 @@
   <label for="lname">Last name:</label><br>
   <input type="text" id="lname" name="lname">
 </form>
+<button id="button1">Button</button>
 <div id=debugger>asfdg</div>
 <!-- </div> -->
 </body>
 <script type="text/javascript">
-    // const colorPicker = new iro.ColorPicker('#picker', {
-    //     borderColor: "#ffffff",
-    //     borderWidth: 1,
-    //     width: Math.round(document.documentElement.clientWidth / 2),
-    // });
-    // colorPicker.on('color:change', function (color) {
-    //     document.body.style.background = color.hexString;
-    // });
 
     Telegram.WebApp.ready();
     Telegram.WebApp.MainButton.setText('Choose Color').show().onClick(function () {
         // const data = JSON.stringify({hex: colorPicker.color.hexString, rgb: colorPicker.color.rgb});
-        // const data = JSON.stringify({hex:12, rgb:33});        
+        // const data = JSON.stringify({hex:12, rgb:33});
         const data = JSON.stringify($('#myform').serializeArray());
         Telegram.WebApp.sendData(data);
         Telegram.WebApp.close();
     });
+
+    document.getElementById('button1').onclick = function(){
+        const data = JSON.stringify($('#myform').serializeArray());
+        console.log(data);
+        $('#debugger').text(data);
+    };
 </script>
 <script type="text/javascript">
     Telegram.WebApp.expand();
