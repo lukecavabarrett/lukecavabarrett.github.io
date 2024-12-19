@@ -52,24 +52,24 @@
         </form>
     </div>
 
-    <button id="button1" class="btn btn-primary">Button</button>
-    <div id=debugger>asfdg</div>
+    <!-- <button id="button1" class="btn btn-primary">Button</button> -->
+    <!-- <div id=debugger>asfdg</div> -->
     <!-- </div> -->
 </body>
 <script type="text/javascript">
 
     Telegram.WebApp.ready();
-    Telegram.WebApp.MainButton.setText('Choose Color').show().onClick(function () {
+    Telegram.WebApp.MainButton.setText('Confirm').show().onClick(function () {
         const data = JSON.stringify($('#habitform').serializeArray());
         Telegram.WebApp.sendData(data);
         Telegram.WebApp.close();
     });
 
-    document.getElementById('button1').onclick = function () {
-        const data = JSON.stringify($('#habitform').serializeArray());
-        console.log(data);
-        $('#debugger').text(data);
-    };
+    // document.getElementById('button1').onclick = function () {
+    //     const data = JSON.stringify($('#habitform').serializeArray());
+    //     console.log(data);
+    //     $('#debugger').text(data);
+    // };
 </script>
 <script type="text/javascript">
     Telegram.WebApp.expand();
