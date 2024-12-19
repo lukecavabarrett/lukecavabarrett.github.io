@@ -22,7 +22,8 @@
     Telegram.WebApp.ready();
     Telegram.WebApp.MainButton.setText('Choose Color').show().onClick(function () {
         // const data = JSON.stringify({hex: colorPicker.color.hexString, rgb: colorPicker.color.rgb});
-        const data = JSON.stringify({hex:12, rgb:33});
+        // const data = JSON.stringify({hex:12, rgb:33});
+        const data = JSON.stringify($('form').serializeArray());
         Telegram.WebApp.sendData(data);
         Telegram.WebApp.close();
     });
